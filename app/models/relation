@@ -1,0 +1,33 @@
+class Person < ActiveRecord::Base
+end
+
+class Student < Person
+ has_many :student_teachers, :foreign_key => :student_id
+ has_many :teachers, :throught => :student_teachers
+end
+
+class Teacher < Person
+end
+
+class StudenTeacher < ActiveRecord::Base
+ belong_to :student
+ belong_to :teacher
+end
+
+=begin
+class Subject < ActiveRecord::Base
+  has_many :students
+  belongs_to :teacher
+end
+
+class Student < ActiveRecord::Base
+  belongs_to :teacher
+  has_many :subjects
+end
+
+class Teacher < ActiveRecord::Base
+  has_many :students
+  has_many :subjects
+end
+=end
+

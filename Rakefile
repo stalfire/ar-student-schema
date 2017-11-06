@@ -7,11 +7,13 @@ require_relative 'app/models/teacher'
 desc "create the database"
 task "db:create" do
   touch 'db/ar-students.sqlite3'
+  touch 'db/ar-teachers.sqlite3' #new added
 end
 
 desc "drop the database"
 task "db:drop" do
   rm_f 'db/ar-students.sqlite3'
+  rm_f 'db/ar-teachers.sqlite3' # new added
 end
 
 desc "migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
