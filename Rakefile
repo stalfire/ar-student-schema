@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require 'rake'
 require 'rspec/core/rake_task'
 require_relative 'db/config'
